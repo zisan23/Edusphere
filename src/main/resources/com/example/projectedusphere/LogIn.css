@@ -1,0 +1,7 @@
+.vbox_background_center{
+    -fx-background-image:url("LogInBackground.png");
+}
+
+.vbox_background_right{
+    -fx-background-image:url("LogInBG2.png");
+}
