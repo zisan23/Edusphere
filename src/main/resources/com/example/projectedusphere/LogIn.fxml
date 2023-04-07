@@ -12,19 +12,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="780.0" style="-fx-background-color: #f8f2e6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="780.0" style="-fx-background-color: #f8f2e6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LogInController">
    <right>
       <VBox prefWidth="332.0" styleClass="vbox_background_right" stylesheets="@LogIn.css" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane prefHeight="487.0" prefWidth="332.0">
                <children>
-                  <TextField alignment="CENTER" layoutX="33.0" layoutY="155.0" prefHeight="38.0" prefWidth="267.0" promptText="Username" style="-fx-background-radius: 50; -fx-border-radius: 50;" />
-                  <Button alignment="CENTER" layoutX="33.0" layoutY="259.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="267.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-background-color: #b9ff66;" text="Log In">
+                  <TextField fx:id="loginusername" alignment="CENTER" layoutX="33.0" layoutY="155.0" prefHeight="38.0" prefWidth="267.0" promptText="Username" style="-fx-background-radius: 50; -fx-border-radius: 50;" />
+                  <Button fx:id="loginbutton" alignment="CENTER" layoutX="33.0" layoutY="259.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="267.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-background-color: #b9ff66;" text="Log In">
                      <font>
                         <Font name="Times New Roman Bold" size="18.0" />
                      </font>
                   </Button>
-                  <PasswordField alignment="CENTER" layoutX="33.0" layoutY="202.0" prefHeight="38.0" prefWidth="267.0" promptText="Password" style="-fx-background-radius: 50; -fx-border-radius: 50;" />
+                  <PasswordField fx:id="loginpassword" alignment="CENTER" layoutX="33.0" layoutY="202.0" prefHeight="38.0" prefWidth="267.0" promptText="Password" style="-fx-background-radius: 50; -fx-border-radius: 50;" />
                </children>
             </AnchorPane>
          </children>
@@ -39,7 +39,7 @@
                      <children>
                         <AnchorPane prefHeight="100.0" prefWidth="451.0">
                            <children>
-                              <Button layoutX="335.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: #a8a2b8; -fx-background-radius: 50; -fx-border-radius: 50;" text="Sign Up" textFill="#2c0f75">
+                              <Button fx:id="signupbutton" layoutX="335.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: #a8a2b8; -fx-background-radius: 50; -fx-border-radius: 50;" text="Sign Up" textFill="#2c0f75">
                                  <font>
                                     <Font name="Times New Roman Bold" size="22.0" />
                                  </font>
