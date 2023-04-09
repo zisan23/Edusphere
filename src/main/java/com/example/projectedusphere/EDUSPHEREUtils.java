@@ -17,6 +17,20 @@ public class EDUSPHEREUtils {
     private static String Email;
     private static String Roll;
 
+    private static String Name;
+    private static String Password;
+
+    private static String Bio;
+
+    public static String getBio(){return Bio;}
+    public static void setBio(String text){Bio = text;}
+
+    public static String getName(){return Name;}
+    public static void setName(String name){Name = name;}
+
+    public static String getPassword(){return Password;}
+    public static void setPassword(String password){Password = password;}
+
     public static String getEmail(){
         return Email;
     }
@@ -100,6 +114,13 @@ public class EDUSPHEREUtils {
 
                     userInsert.executeUpdate();
 
+                    setName(Name);
+                    setPassword(Password);
+                    setEmail(Email);
+                    setRoll(Roll);
+                    setRegistrationNumber(Registration);
+                    setBio(Bio);
+
                     changeScene(event, "Dashboard.fxml", "Dasboard", null, null);
 
                 }
@@ -154,7 +175,7 @@ public class EDUSPHEREUtils {
 
         try{
             connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", "root", "ZisanMahmud@12002060");
-            preparedStatement = connection.prepareStatement("SELECT userName, email, password, roll, registration FROM users WHERE userName = ?");
+            preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE userName = ?");
             preparedStatement.setString(1, Username);
             resultSet = preparedStatement.executeQuery();
 
@@ -171,11 +192,15 @@ public class EDUSPHEREUtils {
                     String findpass = resultSet.getString("password");
                     String findroll = resultSet.getString("roll");
                     String findreg = resultSet.getString("registration");
+                    String findbio = resultSet.getString("about");
 
                     if(findpass.equals(Password)){
+                        setName(findname);
+                        setPassword(Password);
                         setEmail(findemail);
                         setRoll(findroll);
                         setRegistrationNumber(findreg);
+                        setBio(findbio);
                         changeScene(event, "Dashboard.fxml", "Dasboard", null, null);
                     }
                     else{
@@ -210,6 +235,76 @@ public class EDUSPHEREUtils {
                 }
             }
 
+            if(connection != null){
+                try{
+                    connection.close();
+                }
+                catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static void bio(ActionEvent event, String text, String Registration){
+        Connection connection = null;
+        PreparedStatement userInsert = null;
+        PreparedStatement finduser = null;
+        ResultSet resultSet = null;
+
+        try{
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", "root", "ZisanMahmud@12002060");
+            finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
+            finduser.setString(1, Registration);
+
+            resultSet = finduser.executeQuery();
+
+            if(!resultSet.isBeforeFirst()){
+                System.out.println("Invalid Registration");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Invalid Registration");
+                alert.show();
+            }
+            else{
+                while(resultSet.next()){
+                    String findreg = resultSet.getString("registration");
+
+                    if(findreg.equals(Registration)){
+                        userInsert = connection.prepareStatement("UPDATE users SET about = ? WHERE registration = ?");
+                        userInsert.setString(1, text);
+                        userInsert.setString(2, Registration);
+                        userInsert.executeUpdate();
+                        setBio(Bio);
+                    }
+                }
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (userInsert != null) {
+                try {
+                    userInsert.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if(finduser != null){
+                try{
+                    finduser.close();
+                } catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
             if(connection != null){
                 try{
                     connection.close();

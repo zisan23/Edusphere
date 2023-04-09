@@ -3,7 +3,6 @@
 }
 .signUpRight{
     -fx-background-color:#01A66F;
-    -fx-background-color: linear-gradient(to top,hsl(160,98.8%,32.7%), hsl(160,95.8%,29.7%));
 }
 .signUpScreenRightText{
     -fx-font-size:64px;

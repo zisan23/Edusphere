@@ -62,10 +62,13 @@
                </cursor>
             </TextField>
             <Button fx:id="signupmainbutton" layoutX="67.0" layoutY="478.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="507.0" styleClass="signUpButton" stylesheets="@SignUp.css" text="Sign Up" textFill="#ececec" />
-            <ImageView fitHeight="296.0" fitWidth="388.0" layoutX="121.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="210.0" fitWidth="296.0" layoutX="174.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Logo.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
             </ImageView>
             <Text layoutX="84.0" layoutY="554.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Have an Account?">
                <font>
@@ -76,6 +79,9 @@
                <font>
                   <Font name="Times New Roman" size="17.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </AnchorPane>
