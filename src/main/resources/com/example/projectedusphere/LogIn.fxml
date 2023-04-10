@@ -4,97 +4,91 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="780.0" style="-fx-background-color: #f8f2e6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LogInController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1200.0" style="-fx-background-color: #f8f2e6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LogInController">
+   <left>
+      <AnchorPane prefHeight="680.0" prefWidth="737.0" styleClass="background_color_right" stylesheets="@LogIn.css" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="171.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="309.8125">
+               <font>
+                  <Font name="Impact" size="72.0" />
+               </font>
+            </Text>
+            <Text fill="#a19494" layoutX="481.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to">
+               <font>
+                  <Font name="Impact" size="72.0" />
+               </font>
+            </Text>
+            <Text layoutX="208.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EDUSPHERE">
+               <font>
+                  <Font name="Impact" size="72.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#214024" />
+                        <Stop color="#a19a10" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <ImageView fitHeight="268.0" fitWidth="405.0" layoutX="222.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
    <right>
-      <VBox prefWidth="332.0" styleClass="vbox_background_right" stylesheets="@LogIn.css" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="680.0" prefWidth="700.0" styleClass="background_color" stylesheets="@LogIn.css" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="487.0" prefWidth="332.0">
-               <children>
-                  <TextField fx:id="loginusername" alignment="CENTER" layoutX="33.0" layoutY="155.0" prefHeight="38.0" prefWidth="267.0" promptText="Username" style="-fx-background-radius: 50; -fx-border-radius: 50;">
-                     <cursor>
-                        <Cursor fx:constant="TEXT" />
-                     </cursor></TextField>
-                  <Button fx:id="loginbutton" alignment="CENTER" layoutX="33.0" layoutY="259.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="267.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-background-color: #b9ff66;" text="Log In">
-                     <font>
-                        <Font name="Times New Roman Bold" size="18.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <PasswordField fx:id="loginpassword" alignment="CENTER" layoutX="33.0" layoutY="202.0" prefHeight="38.0" prefWidth="267.0" promptText="Password" style="-fx-background-radius: 50; -fx-border-radius: 50;">
-                     <cursor>
-                        <Cursor fx:constant="TEXT" />
-                     </cursor></PasswordField>
-               </children>
-            </AnchorPane>
+            <TextField fx:id="loginusername" alignment="CENTER" layoutX="55.0" layoutY="219.0" prefHeight="38.0" prefWidth="386.0" promptText="Username" style="-fx-background-radius: 50; -fx-border-radius: 50;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="loginpassword" alignment="CENTER" layoutX="55.0" layoutY="278.0" prefHeight="38.0" prefWidth="386.0" promptText="Password" style="-fx-background-radius: 50; -fx-border-radius: 50;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </PasswordField>
+            <Button fx:id="loginbutton" alignment="CENTER" layoutX="115.0" layoutY="340.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="267.0" styleClass="button_2" stylesheets="@LogIn.css" text="Log In">
+               <font>
+                  <Font name="Times New Roman Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="signupbutton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" styleClass="greenButton" stylesheets="@LogIn.css" text="Sign Up" textFill="#2c0f75">
+               <font>
+                  <Font name="Times New Roman Bold" size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fx:id="exit" fitHeight="50.0" fitWidth="45.0" layoutX="408.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Logout.png" />
+               </image>
+            </ImageView>
          </children>
-      </VBox>
+      </AnchorPane>
    </right>
-   <center>
-      <VBox prefWidth="440.0" styleClass="vbox_background_center" stylesheets="@LogIn.css" BorderPane.alignment="CENTER">
-         <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <HBox prefHeight="100.0" prefWidth="449.0">
-                     <children>
-                        <AnchorPane prefHeight="100.0" prefWidth="451.0">
-                           <children>
-                              <Button fx:id="signupbutton" layoutX="335.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: #a8a2b8; -fx-background-radius: 50; -fx-border-radius: 50;" text="Sign Up" textFill="#2c0f75">
-                                 <font>
-                                    <Font name="Times New Roman Bold" size="22.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Button>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </HBox>
-               </children>
-            </HBox>
-            <HBox prefHeight="381.0" prefWidth="448.0">
-               <children>
-                  <AnchorPane prefHeight="381.0" prefWidth="448.0">
-                     <children>
-                        <Text layoutX="23.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
-                           <font>
-                              <Font name="Impact" size="64.0" />
-                           </font>
-                        </Text>
-                        <Text fill="#a19494" layoutX="304.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to">
-                           <font>
-                              <Font name="Impact" size="64.0" />
-                           </font>
-                        </Text>
-                        <Text layoutX="44.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EDUSPHERE">
-                           <font>
-                              <Font name="Impact" size="64.0" />
-                           </font>
-                           <fill>
-                              <LinearGradient endX="1.0" endY="1.0">
-                                 <stops>
-                                    <Stop color="#214024" />
-                                    <Stop color="#a19a10" offset="1.0" />
-                                 </stops>
-                              </LinearGradient>
-                           </fill>
-                        </Text>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </center>
 </BorderPane>

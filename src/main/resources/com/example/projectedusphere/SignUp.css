@@ -1,8 +1,8 @@
-.signUpScreen{
-     -fx-background-image:url("SignUpScreen.png");
-}
 .signUpRight{
     -fx-background-color:#01A66F;
+}
+.signupLeft{
+    -fx-background-color: linear-gradient(to bottom, #02A388, #F9F9F9);
 }
 .signUpScreenRightText{
     -fx-font-size:64px;
