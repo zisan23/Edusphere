@@ -2,6 +2,7 @@ package Controllers;
 
 import com.example.projectedusphere.DashBoard;
 import com.example.projectedusphere.EDUSPHEREUtils;
+import com.example.projectedusphere.FeatureSelector;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -44,6 +46,8 @@ public class DashboardController extends DashBoard implements Initializable {
     private Button saveButton;
     @FXML
     private Label userPassword;
+    @FXML
+    private ImageView exit;
 
     private  String name;
     private  String email;
@@ -105,7 +109,7 @@ public class DashboardController extends DashBoard implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //NavigationHandler
+        FeatureSelector.SelectScene(profile, books, time, attendence, result, exit);
 
         userName.setText(name);
         userEmail.setText(email);
