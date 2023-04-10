@@ -4,12 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="9ab351c2-bb43-4fbe-9099-41849967e7b6" name="Changes" comment="fifth Commit:&#10;Dashboard completed" />
+=======
+    <list default="true" id="2980ffc6-c6df-49a5-8a8a-5ae0e4caab58" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/LogIn.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/LogIn.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/LogIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/SignUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/SignUp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/SignUp.fxml" afterDir="false" />
+    </list>
+>>>>>>> origin/main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -26,18 +40,34 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+>>>>>>> origin/main
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="workspaceImportEnabled" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectId" id="2NrCd5FJ6LZ3ZM7q3DC5dA8T8Qi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+=======
+  <component name="ProjectId" id="2ODfAb70yA6mWu8nZALkBZnAcSc" />
+>>>>>>> origin/main
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -157,4 +187,23 @@
     <expand />
     <select />
   </component>
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2980ffc6-c6df-49a5-8a8a-5ae0e4caab58" name="Changes" comment="" />
+      <created>1681099933011</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681099933011</updated>
+    </task>
+    <servers />
+  </component>
+>>>>>>> origin/main
 </project>
