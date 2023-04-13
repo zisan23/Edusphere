@@ -7,8 +7,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.application.Platform;
 
-public class FeatureSelector {
-    public static void SelectScene(Button profile, Button books, Button time, Button attendence, Button Result, ImageView exit){
+
+public class FeatureSelector{
+
+    public static void SelectScene(Button profile, Button books, Button time, Button attendence, Button Result, ImageView exit, Button note){
         profile.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -27,6 +29,12 @@ public class FeatureSelector {
                 Platform.exit();
             }
         });
+        note.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                EDUSPHEREUtils.changeScene(event,"Note.fxml", "Notes", null, null);
+            }
+        });
     }
 
     public static void ExitSelector(ImageView exit){
@@ -37,4 +45,5 @@ public class FeatureSelector {
             }
         });
     }
+
 }

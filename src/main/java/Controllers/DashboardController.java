@@ -48,6 +48,8 @@ public class DashboardController extends DashBoard implements Initializable {
     private Label userPassword;
     @FXML
     private ImageView exit;
+    @FXML
+    private Button note;
 
     private  String name;
     private  String email;
@@ -109,15 +111,15 @@ public class DashboardController extends DashBoard implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        FeatureSelector.SelectScene(profile, books, time, attendence, result, exit);
+        FeatureSelector.SelectScene(profile, books, time, attendence, result, exit, note);
 
         userName.setText(name);
         userEmail.setText(email);
         userRoll.setText(roll);
         userRegistration.setText(reg);
         userPassword.setText(pass);
-        profileBio.setWrapText(true);
-        profileBio.setText(BIO);
+
+
         saveButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -129,7 +131,8 @@ public class DashboardController extends DashBoard implements Initializable {
 
         });
 
-
+        profileBio.setWrapText(true);
+        profileBio.setText(BIO);
 
     }
 }

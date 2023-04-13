@@ -23,8 +23,10 @@ public class BooksController implements Initializable {
     private Button result;
     @FXML
     private ImageView exit;
+    @FXML
+    private Button note;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        FeatureSelector.SelectScene(profile, books, time, attendence, result, exit);
+        FeatureSelector.SelectScene(profile, books, time, attendence, result, exit, note);
     }
 }

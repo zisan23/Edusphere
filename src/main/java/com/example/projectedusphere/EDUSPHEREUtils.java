@@ -21,6 +21,9 @@ public class EDUSPHEREUtils {
     private static String Password;
 
     private static String Bio;
+    private static String Note;
+    public static String getKeepnote(){return Note;}
+    public static void setNote(String text){Note = text;}
 
     public static String getBio(){return Bio;}
     public static void setBio(String text){Bio = text;}
@@ -109,7 +112,7 @@ public class EDUSPHEREUtils {
                     userInsert.setString(1, Name);
                     userInsert.setString(2, Email);
                     userInsert.setString(3, Password);
-                    userInsert.setString(4, String.valueOf(Roll));
+                    userInsert.setString(4, Roll);
                     userInsert.setString(5, Registration);
 
                     userInsert.executeUpdate();
@@ -120,6 +123,7 @@ public class EDUSPHEREUtils {
                     setRoll(Roll);
                     setRegistrationNumber(Registration);
                     setBio(Bio);
+                    setNote(Note);
 
                     changeScene(event, "Dashboard.fxml", "Dasboard", null, null);
 
@@ -193,6 +197,7 @@ public class EDUSPHEREUtils {
                     String findroll = resultSet.getString("roll");
                     String findreg = resultSet.getString("registration");
                     String findbio = resultSet.getString("about");
+                    String findnote = resultSet.getString("note");
 
                     if(findpass.equals(Password)){
                         setName(findname);
@@ -201,6 +206,7 @@ public class EDUSPHEREUtils {
                         setRoll(findroll);
                         setRegistrationNumber(findreg);
                         setBio(findbio);
+                        setNote(findnote);
                         changeScene(event, "Dashboard.fxml", "Dasboard", null, null);
                     }
                     else{
@@ -275,6 +281,77 @@ public class EDUSPHEREUtils {
                         userInsert.setString(2, Registration);
                         userInsert.executeUpdate();
                         setBio(Bio);
+                    }
+                }
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (userInsert != null) {
+                try {
+                    userInsert.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if(finduser != null){
+                try{
+                    finduser.close();
+                } catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+            if(connection != null){
+                try{
+                    connection.close();
+                }
+                catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static void Note(ActionEvent event, String text, String Registration){
+        Connection connection = null;
+        PreparedStatement userInsert = null;
+        PreparedStatement finduser = null;
+        ResultSet resultSet = null;
+
+        try{
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", "root", "ZisanMahmud@12002060");
+            finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
+            finduser.setString(1, Registration);
+
+            resultSet = finduser.executeQuery();
+
+            if(!resultSet.isBeforeFirst()){
+                System.out.println("Invalid Registration");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Invalid Registration");
+                alert.show();
+            }
+            else{
+                while(resultSet.next()){
+                    String findreg = resultSet.getString("registration");
+
+                    if(findreg.equals(Registration)){
+
+                        userInsert = connection.prepareStatement("UPDATE users SET note = ? WHERE registration = ?");
+                        userInsert.setString(1, text);
+                        userInsert.setString(2, Registration);
+                        userInsert.executeUpdate();
+                        setNote(Note);
                     }
                 }
             }

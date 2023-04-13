@@ -1,6 +1,6 @@
 package com.example.projectedusphere;
 
-public class DashBoard {
+public class DashBoard implements DashboardInterface{
     protected static String userName;
     protected static String userEmail;
     protected static String userRoll;
