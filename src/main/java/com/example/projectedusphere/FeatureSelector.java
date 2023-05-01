@@ -23,6 +23,13 @@ public class FeatureSelector{
                 EDUSPHEREUtils.changeScene(event, "Books.fxml", "Books", null, null);
             }
         });
+
+        time.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                EDUSPHEREUtils.changeScene(event, "FOT.fxml", "Function of Time", null, null);
+            }
+        });
         exit.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
