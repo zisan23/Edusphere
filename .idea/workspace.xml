@@ -4,34 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ff51319-c486-45c3-a257-b9e3ccfd849f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+    <list default="true" id="8ff51319-c486-45c3-a257-b9e3ccfd849f" name="Changes" comment="Final Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AttendenceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AttendenceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/BooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/FOTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/FOTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/NoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ResultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectedusphere/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectedusphere/Books.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectedusphere/EDUSPHEREUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectedusphere/EDUSPHEREUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectedusphere/FeatureSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectedusphere/FeatureSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectedusphere/Notes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectedusphere/Notes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Attendence.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Attendence.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Books.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Books.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/FOT.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/FOT.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/LogIn.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/LogIn.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/LogIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Logout.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Note.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Note.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Note.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Note.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/Result.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/SignUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/SignUp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/SignUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectedusphere/dashboard.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +82,18 @@
       <option name="presentableId" value="Default" />
       <updated>1684030867968</updated>
     </task>
+    <task id="LOCAL-00001" summary="Final Update">
+      <created>1684075742785</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684075742785</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Final Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Update" />
   </component>
 </project>
