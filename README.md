@@ -8,6 +8,10 @@
 
 ## Description
 
+“Edusphere” is a smart classroom management software that helps students to 
+properly maintain their study in an organized manner. This software aims to 
+streamline the process of keeping track of student progress and performance, 
+making it easier for them to monitor their academic growth.
 
 #### Programming Languages
 
@@ -41,7 +45,7 @@
 
 ### Project Set Up
 
-- Download the file from github
+- Download(https://github.com/zisan23/Edusphere/archive/refs/heads/main.zip) the file from github
 - Open the "lib" directory and right click on " mysql-connector-java-8.0.28.jar ",
   select " Add as a libray..." and then prees "OK".
 
@@ -58,23 +62,21 @@ Find class "EDUSPHERE" in "src/main/java/com/example/projectedusphere"  and run 
 
 ## Project UI
 
-![LogIn](/Images/1LogIn.png)
-![SignUp](/Images/2SignUp.png)
-![Profile](/Images/3DashBoard.png)
-![SubjectChoice](/Images/4Subject.png)
-![Books](/Images/5Books.png)
-![FunctionOfTime](/Images/6FOT.png)
-![Attendance](/Images/7Attendance.png)
-![Graph](/Images/8Graph.png)
-![Result](/Images/9Result.png)
-![KeepNote](/Images/10Note.png)
+![LogIn](/Images/1LogIn.png)  
+![SignUp](/Images/2SignUp.png)  
+![Profile](/Images/3DashBoard.png)  
+![SubjectChoice](/Images/4Subject.png)  
+![Books](/Images/5Books.png)  
+![FunctionOfTime](/Images/6FOT.png)  
+![Attendance](/Images/7Attendance.png)  
+![Graph](/Images/8Graph.png)  
+![Result](/Images/9Result.png)  
+![KeepNote](/Images/10Note.png)  
 
 ---
 
 ## Developer Information
 
-- Zisan Mahmud - [@zisan23] (https://github.com/zisan23)
-- Waki As Sami - [@waki-AsSami] (https://github.com/waki-AsSami)
-- Md. Sadman Sakib - [@ssadman887] (https://github.com/ssadman887)
-
-[Top] (#EDUSPHERE)
+- Zisan Mahmud - [@zisan23](https://github.com/zisan23)
+- Waki As Sami - [@waki-AsSami](https://github.com/waki-AsSami)
+- Md. Sadman Sakib - [@ssadman887](https://github.com/ssadman887)
