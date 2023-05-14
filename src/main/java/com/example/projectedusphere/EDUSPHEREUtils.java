@@ -14,6 +14,9 @@ import java.io.IOException;
 import java.sql.*;
 
 public class EDUSPHEREUtils {
+    private static String url = "jdbc:mysql://localhost/edusphere";
+    private static String userName = "root";
+    private static String SQLPASS = "ZisanMahmud@12002060";
     private static String RegistrationNumber;
     private static String Email;
     private static String Roll;
@@ -138,7 +141,7 @@ public class EDUSPHEREUtils {
         ResultSet resultSet = null;
 
         try{
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", "root", "ZisanMahmud@12002060");
+            connection = DriverManager.getConnection(url, userName, SQLPASS);
             checkUserExists = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             checkUserExists.setString(1, Registration);
 
@@ -229,7 +232,7 @@ public class EDUSPHEREUtils {
         ResultSet resultSet = null;
 
         try{
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", "root", "ZisanMahmud@12002060");
+            connection = DriverManager.getConnection(url, userName, SQLPASS);
             preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE userName = ?");
             preparedStatement.setString(1, Username);
             resultSet = preparedStatement.executeQuery();
@@ -354,7 +357,7 @@ public class EDUSPHEREUtils {
         ResultSet resultSet = null;
 
         try{
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", "root", "ZisanMahmud@12002060");
+            connection = DriverManager.getConnection(url, userName, SQLPASS);
             finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             finduser.setString(1, Registration);
 
@@ -430,7 +433,7 @@ public class EDUSPHEREUtils {
         ResultSet resultSet = null;
 
         try{
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", "root", "ZisanMahmud@12002060");
+            connection = DriverManager.getConnection(url, userName, SQLPASS);
             finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             finduser.setString(1, Registration);
 
@@ -507,7 +510,7 @@ public class EDUSPHEREUtils {
         ResultSet resultset = null;
 
         try{
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", "root", "ZisanMahmud@12002060");
+            connection = DriverManager.getConnection(url, userName, SQLPASS);
             finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             finduser.setString(1, Registration);
 
@@ -582,7 +585,7 @@ public class EDUSPHEREUtils {
         ResultSet resultset = null;
 
         try{
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", "root", "ZisanMahmud@12002060");
+            connection = DriverManager.getConnection(url, userName, SQLPASS);
             finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             finduser.setString(1, Registration);
 
@@ -660,7 +663,7 @@ public class EDUSPHEREUtils {
         ResultSet resultset = null;
 
         try{
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", "root", "ZisanMahmud@12002060");
+            connection = DriverManager.getConnection(url, userName, SQLPASS);
             finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             finduser.setString(1, Registration);
 
@@ -743,7 +746,7 @@ public class EDUSPHEREUtils {
         ResultSet resultset = null;
 
         try{
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", "root", "ZisanMahmud@12002060");
+            connection = DriverManager.getConnection(url, userName, SQLPASS);
             finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             finduser.setString(1, Registration);
 
