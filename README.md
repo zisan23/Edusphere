@@ -1,6 +1,6 @@
 # Edusphere
 
-![Project Image] (/Images/Logo.png)
+![Project](/Images/Logo.png)
 
 > A project developed for undergrad students
 
