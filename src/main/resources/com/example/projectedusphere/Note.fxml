@@ -12,7 +12,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1200.0" styleClass="dashboardScreen" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.NoteController">
     <top>
-        <AnchorPane prefHeight="98.0" prefWidth="841.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="98.0" prefWidth="841.0" styleClass="up" stylesheets="@dashboard.css" BorderPane.alignment="CENTER">
             <children>
                 <ImageView fitHeight="54.0" fitWidth="49.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -24,9 +24,9 @@
                         <Image url="@Edusphere.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="exit" fitHeight="50.0" fitWidth="45.0" layoutX="1149.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="exit" fitHeight="50.0" fitWidth="45.0" layoutX="1155.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@Logout.png" />
+                        <Image url="@Exit.png" />
                     </image>
                     <cursor>
                         <Cursor fx:constant="HAND" />
@@ -36,7 +36,7 @@
         </AnchorPane>
     </top>
     <left>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #86C58D;" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="side" stylesheets="@dashboard.css" BorderPane.alignment="CENTER">
             <children>
                 <Button fx:id="profile" alignment="CENTER" layoutX="16.0" layoutY="48.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="175.0" style="-fx-background-color: none; -fx-background-radius: 50; -fx-border-radius: 50;" text="Profile">
                     <font>
@@ -120,7 +120,7 @@
         </AnchorPane>
     </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="middle" stylesheets="@dashboard.css" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="tf_note" layoutX="24.0" layoutY="75.0" prefHeight="31.0" prefWidth="886.0" promptText="Type your note here" styleClass="text_input" stylesheets="@Note.css">
                <font>

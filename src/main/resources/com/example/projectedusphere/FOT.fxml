@@ -14,7 +14,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1200.0" styleClass="dashboardScreen" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FOTController">
    <top>
-      <AnchorPane prefHeight="98.0" prefWidth="841.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="98.0" prefWidth="841.0" styleClass="up" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="54.0" fitWidth="49.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -26,9 +26,9 @@
                   <Image url="@Edusphere.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="exit" fitHeight="50.0" fitWidth="45.0" layoutX="1149.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="exit" fitHeight="50.0" fitWidth="45.0" layoutX="1155.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Logout.png" />
+                  <Image url="@Exit.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -38,7 +38,7 @@
       </AnchorPane>
    </top>
    <left>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #86C58D;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="side" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="profile" alignment="CENTER" layoutX="16.0" layoutY="48.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="175.0" style="-fx-background-color: none; -fx-background-radius: 50; -fx-border-radius: 50;" text="Profile">
                <font>
@@ -122,55 +122,67 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="middle" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="53.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadline" wrappingWidth="263.6708984375">
+            <Text layoutX="81.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadline" wrappingWidth="263.6708984375">
                <font>
                   <Font name="Times New Roman Bold" size="24.0" />
                </font>
             </Text>
-            <Text layoutX="53.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Hours :">
-               <font>
-                  <Font name="Times New Roman Bold" size="31.0" />
-               </font>
-            </Text>
-            <TextField fx:id="studytime" layoutX="463.0" layoutY="94.0" prefHeight="31.0" prefWidth="268.0" promptText="Today's Study Time" />
-            <Button fx:id="savebt" layoutX="752.0" layoutY="96.0" mnemonicParsing="false" style="-fx-background-color: none; -fx-border-radius: 30; -fx-background-radius: 30; -fx-border-color: black;" text="Save">
+            <TextField fx:id="studytime" layoutX="578.0" layoutY="94.0" prefHeight="31.0" prefWidth="268.0" promptText="Time Required" />
+            <Button fx:id="savebt" layoutX="773.0" layoutY="135.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="73.0" style="-fx-background-color: none; -fx-border-radius: 30; -fx-background-radius: 30; -fx-border-color: black;" text="Save">
                <font>
                   <Font name="Times New Roman" size="14.0" />
                </font>
             </Button>
-            <DatePicker fx:id="eddate" layoutX="53.0" layoutY="94.0" prefHeight="31.0" prefWidth="263.0" />
-            <Text layoutX="466.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remaining Hours :">
-               <font>
-                  <Font name="Times New Roman Bold" size="32.0" />
-               </font>
-            </Text>
-            <Text layoutX="280.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress :">
-               <font>
-                  <Font name="Times New Roman Bold" size="36.0" />
-               </font>
-            </Text>
-            <Text layoutX="610.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\%">
-               <font>
-                  <Font name="Times New Roman Bold" size="22.0" />
-               </font>
-            </Text>
-            <Label fx:id="totalHours" layoutX="244.0" layoutY="229.0" prefHeight="21.0" prefWidth="89.0" text="00">
-               <font>
-                  <Font name="Times New Roman Bold" size="32.0" />
-               </font>
-            </Label>
-            <Label fx:id="reamainingtime" layoutX="745.0" layoutY="229.0" text="00">
-               <font>
-                  <Font name="Times New Roman Bold" size="32.0" />
-               </font>
-            </Label>
-            <Label fx:id="progress" layoutX="457.0" layoutY="343.0" prefHeight="29.0" prefWidth="140.0" text="0.0">
-               <font>
-                  <Font name="Times New Roman Bold" size="36.0" />
-               </font>
-            </Label>
+            <DatePicker fx:id="eddate" layoutX="81.0" layoutY="94.0" prefHeight="31.0" prefWidth="263.0" />
+            <AnchorPane layoutX="62.0" layoutY="264.0" prefHeight="63.0" prefWidth="301.0" style="-fx-background-radius: 25;" styleClass="titleBar" stylesheets="@CGPACALC.css">
+               <children>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Hours :">
+                     <font>
+                        <Font name="Times New Roman Bold" size="31.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="totalHours" alignment="CENTER" layoutX="206.0" layoutY="13.0" prefHeight="21.0" prefWidth="89.0" text="00" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman Bold" size="32.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="554.0" layoutY="264.0" prefHeight="63.0" prefWidth="329.0" style="-fx-background-radius: 25; -fx-border-radius: 25;" styleClass="titleBar" stylesheets="@CGPACALC.css">
+               <children>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vacant Hours :">
+                     <font>
+                        <Font name="Times New Roman Bold" size="32.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="reamainingtime" layoutX="283.0" layoutY="13.0" text="00" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman Bold" size="32.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="258.0" layoutY="422.0" prefHeight="63.0" prefWidth="386.0" style="-fx-background-radius: 25; -fx-border-radius: 25;" styleClass="titleBar" stylesheets="@CGPACALC.css">
+               <children>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Efficiency :">
+                     <font>
+                        <Font name="Times New Roman Bold" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="339.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\%">
+                     <font>
+                        <Font name="Times New Roman Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="progress" layoutX="192.0" layoutY="14.0" prefHeight="17.0" prefWidth="140.0" text="0.0" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </center>

@@ -1,6 +1,28 @@
 .dashboardScreen{
     -fx-background-color: linear-gradient(to right, #01A66F, #dddeee);
 }
+.up{
+
+    -fx-background-image: url("Title.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover;
+}
+
+.bio{
+    -fx-padding: 5px;
+}
+
+.side{
+    -fx-background-image: url("side.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover;
+}
+
+.middle{
+    -fx-background-image: url("middle.jpg");
+        -fx-background-repeat: stretch;
+        -fx-background-size: cover;
+}
 .saveButton{
     -fx-background-color:
             #090a0c,

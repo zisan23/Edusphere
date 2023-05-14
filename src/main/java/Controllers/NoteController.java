@@ -38,7 +38,7 @@ public class NoteController extends Notes implements Initializable {
     @FXML
     private TextArea tf_area;
 
-    private String Keepnote;
+    private static String Keepnote;
     private String reg;
 
     public NoteController(){
@@ -66,7 +66,6 @@ public class NoteController extends Notes implements Initializable {
                 EDUSPHEREUtils.Note(event, Keepnote, reg);
                 tf_area.setWrapText(true);
                 tf_area.setText(Keepnote);
-
             }
 
         });

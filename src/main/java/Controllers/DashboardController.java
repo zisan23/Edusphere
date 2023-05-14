@@ -9,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
@@ -50,6 +49,11 @@ public class DashboardController extends DashBoard implements Initializable {
     private ImageView exit;
     @FXML
     private Button note;
+
+    @FXML
+    private Button sub;
+    @FXML
+    private Button logout;
 
     private  String name;
     private  String email;
@@ -133,6 +137,20 @@ public class DashboardController extends DashBoard implements Initializable {
 
         profileBio.setWrapText(true);
         profileBio.setText(BIO);
+
+        sub.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                EDUSPHEREUtils.changeScene(event,"Subjects.fxml", "Subject", null, null);
+            }
+        });
+
+        logout.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                EDUSPHEREUtils.changeScene(event, "LogIn.fxml", "Log In", null, null);
+            }
+        });
 
     }
 }

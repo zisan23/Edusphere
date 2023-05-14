@@ -49,7 +49,6 @@ public class SignUpController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 EDUSPHEREUtils.signUp(event, signupusername.getText(), signupemail.getText(), signuppassword.getText(), signuproll.getText(), signupregistration.getText());
-
             }
         });
     }

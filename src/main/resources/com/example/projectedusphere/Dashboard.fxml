@@ -13,31 +13,31 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1200.0" styleClass="dashboardScreen" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashboardController">
    <top>
-      <AnchorPane prefHeight="98.0" prefWidth="841.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="98.0" prefWidth="841.0" styleClass="up" stylesheets="@dashboard.css" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="54.0" fitWidth="49.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@menu.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="208.0" layoutX="496.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Edusphere.png" />
-               </image>
-            </ImageView>
             <ImageView fx:id="exit" fitHeight="50.0" fitWidth="45.0" layoutX="1149.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Logout.png" />
+                  <Image url="@Exit.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
+            <Text fill="WHITE" layoutX="476.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EDUSPHERE" textAlignment="CENTER">
+               <font>
+                  <Font name="Courier New Bold" size="51.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </top>
    <left>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #86C58D;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #86C58D;" styleClass="side" stylesheets="@dashboard.css" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="profile" alignment="CENTER" layoutX="16.0" layoutY="48.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="175.0" style="-fx-background-color: #7e7e7e; -fx-background-radius: 50; -fx-border-radius: 50;" text="Profile">
                <font>
@@ -121,9 +121,9 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="middle" stylesheets="@dashboard.css" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="28.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name  :" wrappingWidth="121.61669921875">
+            <Text layoutX="27.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name  :" wrappingWidth="121.61669921875">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -133,37 +133,37 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text layoutX="28.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration  :" wrappingWidth="109.61669921875">
+            <Text layoutX="27.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration  :" wrappingWidth="109.61669921875">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text layoutX="28.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Roll  :" wrappingWidth="94.61669921875">
+            <Text layoutX="27.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Roll  :" wrappingWidth="94.61669921875">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text layoutX="28.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email  :" wrappingWidth="68.61669921875">
+            <Text layoutX="27.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email  :" wrappingWidth="68.61669921875">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Label fx:id="userName" layoutX="157.0" layoutY="96.0" prefHeight="28.0" prefWidth="446.0" text="Username">
+            <Label fx:id="userName" layoutX="156.0" layoutY="91.0" prefHeight="28.0" prefWidth="446.0" text="Username">
                <font>
                   <Font name="Times New Roman Bold" size="20.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor></Label>
-            <Label fx:id="userEmail" layoutX="157.0" layoutY="134.0" prefHeight="28.0" prefWidth="446.0" text="User Email">
+            <Label fx:id="userEmail" layoutX="156.0" layoutY="129.0" prefHeight="28.0" prefWidth="446.0" text="User Email">
                <font>
                   <Font name="Times New Roman Bold" size="20.0" />
                </font></Label>
-            <Label fx:id="userRoll" layoutX="157.0" layoutY="171.0" prefHeight="28.0" prefWidth="446.0" text="User Roll">
+            <Label fx:id="userRoll" layoutX="156.0" layoutY="166.0" prefHeight="28.0" prefWidth="446.0" text="User Roll">
                <font>
                   <Font name="Times New Roman Bold" size="20.0" />
                </font></Label>
-            <Label fx:id="userRegistration" layoutX="157.0" layoutY="207.0" prefHeight="28.0" prefWidth="446.0" text="User  Registration">
+            <Label fx:id="userRegistration" layoutX="156.0" layoutY="202.0" prefHeight="28.0" prefWidth="446.0" text="User  Registration">
                <font>
                   <Font name="Times New Roman Bold" size="20.0" />
                </font></Label>
@@ -196,11 +196,23 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <TextField fx:id="profileBioinput" layoutX="11.0" layoutY="307.0" prefHeight="40.0" prefWidth="581.0" promptText="Write Somthing About Yourself" style="-fx-background-radius: 40;" />
-            <Label fx:id="profileBio" alignment="TOP_LEFT" layoutX="620.0" layoutY="161.0" prefHeight="332.0" prefWidth="299.0" style="-fx-background-color: #eeeeee; -fx-background-radius: 10;" text="Hi ! I am a student.">
+            <TextField fx:id="profileBioinput" layoutX="11.0" layoutY="307.0" prefHeight="40.0" prefWidth="581.0" promptText="Write Somthing About Yourself" style="-fx-background-radius: 40;" styleClass="text_input" stylesheets="@Note.css" />
+            <Label fx:id="profileBio" alignment="TOP_CENTER" layoutX="621.0" layoutY="267.0" prefHeight="107.0" prefWidth="299.0" style="-fx-background-color: #F0F8FF; -fx-border-color: #007FFF; -fx-background-radius: 30; -fx-border-radius: 30;" styleClass="bio" stylesheets="@dashboard.css" textOverrun="CENTER_ELLIPSIS" wrapText="true">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font></Label>
+            <Button fx:id="sub" layoutX="700.0" layoutY="101.0" mnemonicParsing="false" style="-fx-background-color: #7DF9FF; -fx-background-radius: 50; -fx-border-radius: 50;" text="Add Subject">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="logout" layoutX="837.0" layoutY="507.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="101.0" style="-fx-background-color: none; -fx-border-color: #000000; -fx-background-radius: 50; -fx-border-radius: 50;" text="Log Out">
+               <font>
+                  <Font name="Times New Roman Bold" size="19.0" />
+               </font></Button>
          </children>
       </AnchorPane>
    </center>

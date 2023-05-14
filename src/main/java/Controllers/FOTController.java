@@ -120,9 +120,9 @@ public class FOTController extends FOT implements Initializable {
                 Storetime = Long.toString(diffInHours);
 
 
-                time4 = studytime.getText();
+                time4 = studytime.getText(); // input today's study time
 
-                long calc = Long.parseLong(time4);
+                long calc = Long.parseLong(time4); //
 
                 temp = diffInHours - calc; // remaining time
 
@@ -135,14 +135,22 @@ public class FOTController extends FOT implements Initializable {
                     count++;
                 }
 
-                float percent = 100 - ((Float.parseFloat(temp2) / storage) * 100);
+                float percent = ((Float.parseFloat(time4) / storage) * 100);
 
                 if (percent > 100) {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Time Limit Exceeded!!!");
                     alert.setContentText("You Have Not Enough Time Left!!!");
                     alert.show();
-                } else {
+                }
+                else if(percent < 0){
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Date Error");
+                    alert.setContentText("Provided Date Has Passed Already");
+                    alert.show();
+                }
+
+                else {
                     Platform.runLater(() -> totalHours.setText(Storetime));
                     Platform.runLater(() -> reamainingtime.setText(temp2));
                     Platform.runLater(() -> progress.setText(Float.toString(percent)));

@@ -2,6 +2,7 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,7 +11,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1200.0" styleClass="dashboardScreen" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BooksController">
     <top>
-        <AnchorPane prefHeight="98.0" prefWidth="841.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="98.0" prefWidth="841.0" styleClass="up" stylesheets="@dashboard.css" BorderPane.alignment="CENTER">
             <children>
                 <ImageView fitHeight="54.0" fitWidth="49.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -24,7 +25,7 @@
                 </ImageView>
                 <ImageView fx:id="exit" fitHeight="50.0" fitWidth="45.0" layoutX="1149.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@Logout.png" />
+                        <Image url="@Exit.png" />
                     </image>
                     <cursor>
                         <Cursor fx:constant="HAND" />
@@ -34,7 +35,7 @@
         </AnchorPane>
     </top>
     <left>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #86C58D;" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="side" stylesheets="@dashboard.css" BorderPane.alignment="CENTER">
             <children>
                 <Button fx:id="profile" alignment="CENTER" layoutX="16.0" layoutY="48.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="175.0" style="-fx-background-color: none; -fx-background-radius: 50; -fx-border-radius: 50;" text="Profile">
                     <font>
@@ -117,4 +118,68 @@
             </children>
         </AnchorPane>
     </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="middle" stylesheets="@dashboard.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="update" layoutX="434.0" layoutY="486.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="94.0" text="Update">
+               <font>
+                  <Font name="Times New Roman Bold" size="21.0" />
+               </font></Button>
+            <AnchorPane layoutX="23.0" layoutY="95.0" prefHeight="43.0" prefWidth="878.0" style="-fx-background-color: #B0E0E6; -fx-background-radius: 15;">
+               <children>
+                  <Label fx:id="s1" layoutX="14.0" layoutY="2.0" text="Course Name">
+                     <font>
+                        <Font name="Times New Roman Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="selectFileButton" layoutX="416.0" layoutY="6.0" mnemonicParsing="false" onAction="#selectFile" text="select File" />
+                  <Button fx:id="viewPdfButton" layoutX="748.0" layoutY="7.0" mnemonicParsing="false" onAction="#viewPdf" text="view Pdf" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="23.0" layoutY="171.0" prefHeight="43.0" prefWidth="878.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-background-color: #ffffff;">
+               <children>
+                  <Label fx:id="s2" text="Course Name">
+                     <font>
+                        <Font name="Times New Roman Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="selectFileButton1" layoutX="416.0" layoutY="6.0" mnemonicParsing="false" onAction="#selectFile1" text="select File" />
+                  <Button fx:id="viewPdfButton1" layoutX="748.0" layoutY="6.0" mnemonicParsing="false" onAction="#viewPdf1" text="view Pdf" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="23.0" layoutY="247.0" prefHeight="43.0" prefWidth="878.0" style="-fx-background-color: #B0E0E6; -fx-background-radius: 15; -fx-border-radius: 15;">
+               <children>
+                  <Button fx:id="selectFileButton2" layoutX="416.0" layoutY="6.0" mnemonicParsing="false" onAction="#selectFile2" text="select File" />
+                  <Button fx:id="viewPdfButton2" layoutX="748.0" layoutY="7.0" mnemonicParsing="false" onAction="#viewPdf2" text="view Pdf" />
+                  <Label fx:id="s3" layoutY="2.0" text="Course Name">
+                     <font>
+                        <Font name="Times New Roman Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="23.0" layoutY="323.0" prefHeight="43.0" prefWidth="878.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15; -fx-border-radius: 15;">
+               <children>
+                  <Button fx:id="selectFileButton3" layoutX="420.0" layoutY="7.0" mnemonicParsing="false" onAction="#selectFile3" text="select File" />
+                  <Button fx:id="viewPdfButton3" layoutX="755.0" layoutY="7.0" mnemonicParsing="false" onAction="#viewPdf3" text="view Pdf" />
+                  <Label fx:id="s4" layoutY="2.0" text="Course Name">
+                     <font>
+                        <Font name="Times New Roman Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="23.0" layoutY="399.0" prefHeight="43.0" prefWidth="878.0" style="-fx-background-color: #B0E0E6; -fx-background-radius: 15; -fx-border-radius: 15;">
+               <children>
+                  <Button fx:id="selectFileButton4" layoutX="423.0" layoutY="9.0" mnemonicParsing="false" onAction="#selectFile4" text="select File" />
+                  <Button fx:id="viewPdfButton4" layoutX="755.0" layoutY="9.0" mnemonicParsing="false" onAction="#viewPdf4" text="view Pdf" />
+                  <Label fx:id="s5" layoutY="5.0" text="Course Name">
+                     <font>
+                        <Font name="Times New Roman Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </center>
 </BorderPane>

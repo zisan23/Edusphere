@@ -1,0 +1,13 @@
+.bgcolor{
+    -fx-background-color: linear-gradient(to right, #02A388, #F9F9F9);
+}
+.textField1{
+    -fx-background-color: linear-gradient(to top,hsba(266, 56%, 35%, 1),hsba(266, 58%, 60%, 1));
+}
+.textField2{
+    -fx-background-color: linear-gradient(to top,hsba(266, 56%, 35%, 1),hsba(266, 58%, 60%, 1));
+}
+
+.circle{
+    -fx-fill: linear-gradient(to right, #000046, #1CB5E0);
+}
