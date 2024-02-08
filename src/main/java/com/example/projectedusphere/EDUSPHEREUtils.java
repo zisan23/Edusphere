@@ -14,9 +14,6 @@ import java.io.IOException;
 import java.sql.*;
 
 public class EDUSPHEREUtils {
-    private static String url = "jdbc:mysql://localhost/edusphere";
-    private static String userName = "root";
-    private static String SQLPASS = "ZisanMahmud@12002060";
     private static String RegistrationNumber;
     private static String Email;
     private static String Roll;
@@ -36,91 +33,130 @@ public class EDUSPHEREUtils {
     private static String[] classattended = new String[5];
     private static String[] Paths = new String[5];
 
-    public static String[] getPaths(){
+    private static String dbpassword = "12345678";
+    private static String dbuser = "root";
+
+
+    public static String[] getPaths() {
         return Paths;
     }
-    public static void setPaths(String[] PAths){
+
+    public static void setPaths(String[] PAths) {
         Paths = PAths;
     }
 
-    public static String[] getClasstaken(){
+    public static String[] getClasstaken() {
         return classtaken;
     }
-    public static void setClasstaken(String[] CLASSTAKEN){
+
+    public static void setClasstaken(String[] CLASSTAKEN) {
         classtaken = CLASSTAKEN;
     }
 
-    public static String[] getClassattended(){
+    public static String[] getClassattended() {
         return classattended;
     }
-    public static void setClassattended(String[] CLASSATTENDED){
+
+    public static void setClassattended(String[] CLASSATTENDED) {
         classattended = CLASSATTENDED;
     }
 
-    public static String[] getSubject(){
+    public static String[] getSubject() {
         return Subject;
     }
-    public static void setSubject(String[] SUB){
+
+    public static void setSubject(String[] SUB) {
         Subject = SUB;
     }
 
-    public static String getTime(){return time;}
-    public static void setTime(String Time){time = Time;}
-    public static String getTime2(){return time2;}
-    public static void setTime2(String Time){time2 = Time;}
-    public static String getKeepnote(){return Note;}
-    public static void setNote(String text){Note = text;}
+    public static String getTime() {
+        return time;
+    }
 
-    public static String getBio(){return Bio;}
-    public static void setBio(String text){Bio = text;}
+    public static void setTime(String Time) {
+        time = Time;
+    }
 
-    public static String getName(){return Name;}
-    public static void setName(String name){Name = name;}
+    public static String getTime2() {
+        return time2;
+    }
 
-    public static String getPassword(){return Password;}
-    public static void setPassword(String password){Password = password;}
+    public static void setTime2(String Time) {
+        time2 = Time;
+    }
 
-    public static String getEmail(){
+    public static String getKeepnote() {
+        return Note;
+    }
+
+    public static void setNote(String text) {
+        Note = text;
+    }
+
+    public static String getBio() {
+        return Bio;
+    }
+
+    public static void setBio(String text) {
+        Bio = text;
+    }
+
+    public static String getName() {
+        return Name;
+    }
+
+    public static void setName(String name) {
+        Name = name;
+    }
+
+    public static String getPassword() {
+        return Password;
+    }
+
+    public static void setPassword(String password) {
+        Password = password;
+    }
+
+    public static String getEmail() {
         return Email;
     }
-    public static void setEmail(String email){
+
+    public static void setEmail(String email) {
         Email = email;
     }
 
-    public static String getRegistrationNumber(){
+    public static String getRegistrationNumber() {
         return RegistrationNumber;
     }
-    public static void setRegistrationNumber(String registrationNumber){
+
+    public static void setRegistrationNumber(String registrationNumber) {
         RegistrationNumber = registrationNumber;
     }
 
-    public static String getRoll(){
+    public static String getRoll() {
         return Roll;
     }
-    public static void setRoll(String roll){
+
+    public static void setRoll(String roll) {
         Roll = roll;
     }
 
-
-
-    public static void changeScene(ActionEvent event, String fxmlFile, String Title, String StudentName, String Password){
+    public static void changeScene(ActionEvent event, String fxmlFile, String Title, String StudentName,
+                                   String Password) {
         Parent root = null;
-        if(StudentName != null || Password != null){
+        if (StudentName != null || Password != null) {
             try {
                 FXMLLoader loader = new FXMLLoader(EDUSPHEREUtils.class.getResource(fxmlFile));
                 root = loader.load();
                 DashboardController dashboardController = loader.getController();
                 dashboardController.getClass();
-            }
-            catch (IOException e){
+            } catch (IOException e) {
                 System.out.println(e.getStackTrace());
             }
-        }
-        else{
-            try{
+        } else {
+            try {
                 root = FXMLLoader.load(EDUSPHEREUtils.class.getResource(fxmlFile));
-            }
-            catch (IOException e){
+            } catch (IOException e) {
                 System.out.println("FXML File Load Error");
             }
         }
@@ -130,37 +166,33 @@ public class EDUSPHEREUtils {
         stage.show();
     }
 
-
-
-
-
-    public static void signUp(ActionEvent event, String Name, String Email, String Password, String Roll, String Registration){
+    public static void signUp(ActionEvent event, String Name, String Email, String Password, String Roll,
+                              String Registration) {
         Connection connection = null;
         PreparedStatement userInsert = null;
         PreparedStatement checkUserExists = null;
         ResultSet resultSet = null;
 
-        try{
-            connection = DriverManager.getConnection(url, userName, SQLPASS);
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", dbuser, dbpassword);
             checkUserExists = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             checkUserExists.setString(1, Registration);
 
             resultSet = checkUserExists.executeQuery();
 
-            if(Name.isEmpty() || Email.isEmpty() || Password.isEmpty() || Roll.isEmpty() || Registration.isEmpty()){
+            if (Name.isEmpty() || Email.isEmpty() || Password.isEmpty() || Roll.isEmpty() || Registration.isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Provide all necessary information");
                 alert.show();
-            }
-            else{
-                if(resultSet.isBeforeFirst()){
+            } else {
+                if (resultSet.isBeforeFirst()) {
                     System.out.println("User already exists");
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setContentText("User already exists");
                     alert.show();
-                }
-                else{
-                    userInsert = connection.prepareStatement("INSERT INTO users (userName, email, password, roll, registration) VALUES(?,?,?,?,?)");
+                } else {
+                    userInsert = connection.prepareStatement(
+                            "INSERT INTO users (userName, email, password, roll, registration) VALUES(?,?,?,?,?)");
                     userInsert.setString(1, Name);
                     userInsert.setString(2, Email);
                     userInsert.setString(3, Password);
@@ -181,70 +213,61 @@ public class EDUSPHEREUtils {
             }
         }
 
-        catch (SQLException e){
+        catch (SQLException e) {
             e.printStackTrace();
         }
 
         finally {
-            if(resultSet != null){
-                try{
+            if (resultSet != null) {
+                try {
                     resultSet.close();
-                }
-                catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
-            if(userInsert != null){
-                try{
+            if (userInsert != null) {
+                try {
                     userInsert.close();
-                }
-                catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
-            if(checkUserExists != null){
-                try{
+            if (checkUserExists != null) {
+                try {
                     checkUserExists.close();
-                }
-                catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
 
-            if(connection != null){
-                try{
+            if (connection != null) {
+                try {
                     connection.close();
-                }
-                catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
         }
     }
 
-
-
-
-
-    public static void login(ActionEvent event, String Username, String Password){
+    public static void login(ActionEvent event, String Username, String Password) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
-        try{
-            connection = DriverManager.getConnection(url, userName, SQLPASS);
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", dbuser, dbpassword);
             preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE userName = ?");
             preparedStatement.setString(1, Username);
             resultSet = preparedStatement.executeQuery();
 
-            if(!resultSet.isBeforeFirst() || Username == null){
+            if (!resultSet.isBeforeFirst() || Username == null) {
                 System.out.println("Invalid Username");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Invalid Username");
                 alert.show();
-            }
-            else{
-                while(resultSet.next()){
+            } else {
+                while (resultSet.next()) {
                     String findname = resultSet.getString("userName");
                     String findemail = resultSet.getString("email");
                     String findpass = resultSet.getString("password");
@@ -258,8 +281,7 @@ public class EDUSPHEREUtils {
                     String[] findSub = new String[5];
                     String[] findClassTaken = new String[5];
                     String[] findClassAttended = new String[5];
-                    String[] findPaths= new String[5];
-
+                    String[] findPaths = new String[5];
 
                     findSub[0] = resultSet.getString("Sub1");
                     findSub[1] = resultSet.getString("Sub2");
@@ -285,8 +307,7 @@ public class EDUSPHEREUtils {
                     findPaths[3] = resultSet.getString("pdf4");
                     findPaths[4] = resultSet.getString("pdf5");
 
-
-                    if(findpass.equals(Password)){
+                    if (findpass.equals(Password)) {
                         setName(findname);
                         setPassword(Password);
                         setEmail(findemail);
@@ -302,8 +323,7 @@ public class EDUSPHEREUtils {
                         setPaths(findPaths);
 
                         changeScene(event, "Dashboard.fxml", "Dashboard", null, null);
-                    }
-                    else{
+                    } else {
                         System.out.println("Wrong Password!!!");
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setContentText("Wrong Password!!!");
@@ -312,68 +332,58 @@ public class EDUSPHEREUtils {
 
                 }
             }
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally {
-            if(resultSet != null){
-                try{
+        } finally {
+            if (resultSet != null) {
+                try {
                     resultSet.close();
-                }
-                catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
 
-            if(preparedStatement != null){
-                try{
+            if (preparedStatement != null) {
+                try {
                     preparedStatement.close();
-                }
-                catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
 
-            if(connection != null){
-                try{
+            if (connection != null) {
+                try {
                     connection.close();
-                }
-                catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
         }
     }
 
-
-
-
-
-    public static void bio(ActionEvent event, String text, String Registration){
+    public static void bio(ActionEvent event, String text, String Registration) {
         Connection connection = null;
         PreparedStatement userInsert = null;
         PreparedStatement finduser = null;
         ResultSet resultSet = null;
 
-        try{
-            connection = DriverManager.getConnection(url, userName, SQLPASS);
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", dbuser, dbpassword);
             finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             finduser.setString(1, Registration);
 
             resultSet = finduser.executeQuery();
 
-            if(!resultSet.isBeforeFirst()){
+            if (!resultSet.isBeforeFirst()) {
                 System.out.println("Invalid Registration");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Invalid Registration");
                 alert.show();
-            }
-            else{
-                while(resultSet.next()){
+            } else {
+                while (resultSet.next()) {
                     String findreg = resultSet.getString("registration");
 
-                    if(findreg.equals(Registration)){
+                    if (findreg.equals(Registration)) {
                         userInsert = connection.prepareStatement("UPDATE users SET about = ? WHERE registration = ?");
                         userInsert.setString(1, text);
                         userInsert.setString(2, Registration);
@@ -385,8 +395,7 @@ public class EDUSPHEREUtils {
                     }
                 }
             }
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -405,51 +414,46 @@ public class EDUSPHEREUtils {
                     e.printStackTrace();
                 }
             }
-            if(finduser != null){
-                try{
+            if (finduser != null) {
+                try {
                     finduser.close();
-                } catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
-            if(connection != null){
-                try{
+            if (connection != null) {
+                try {
                     connection.close();
-                }
-                catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
         }
     }
 
-
-
-
-    public static void Note(ActionEvent event, String text, String Registration){
+    public static void Note(ActionEvent event, String text, String Registration) {
         Connection connection = null;
         PreparedStatement userInsert = null;
         PreparedStatement finduser = null;
         ResultSet resultSet = null;
 
-        try{
-            connection = DriverManager.getConnection(url, userName, SQLPASS);
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", dbuser, dbpassword);
             finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             finduser.setString(1, Registration);
 
             resultSet = finduser.executeQuery();
 
-            if(!resultSet.isBeforeFirst()){
+            if (!resultSet.isBeforeFirst()) {
                 System.out.println("Invalid Registration");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Invalid Registration");
                 alert.show();
-            }
-            else{
-                while(resultSet.next()){
+            } else {
+                while (resultSet.next()) {
                     String findreg = resultSet.getString("registration");
 
-                    if(findreg.equals(Registration)){
+                    if (findreg.equals(Registration)) {
 
                         userInsert = connection.prepareStatement("UPDATE users SET note = ? WHERE registration = ?");
                         userInsert.setString(1, text);
@@ -462,8 +466,7 @@ public class EDUSPHEREUtils {
                     }
                 }
             }
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -482,54 +485,50 @@ public class EDUSPHEREUtils {
                     e.printStackTrace();
                 }
             }
-            if(finduser != null){
-                try{
+            if (finduser != null) {
+                try {
                     finduser.close();
-                } catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
-            if(connection != null){
-                try{
+            if (connection != null) {
+                try {
                     connection.close();
-                }
-                catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
         }
     }
 
-
-
-
-    public static void Subjects(ActionEvent event, String[] subject, String Registration){
+    public static void Subjects(ActionEvent event, String[] subject, String Registration) {
         Connection connection = null;
         PreparedStatement userInsert = null;
         PreparedStatement finduser = null;
         ResultSet resultset = null;
 
-        try{
-            connection = DriverManager.getConnection(url, userName, SQLPASS);
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", dbuser, dbpassword);
             finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             finduser.setString(1, Registration);
 
             resultset = finduser.executeQuery();
 
-            if(!resultset.isBeforeFirst()){
+            if (!resultset.isBeforeFirst()) {
                 System.out.println("Invalid Registration");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Invalid Registration");
                 alert.show();
-            }
-            else{
-                while(resultset.next()){
+            } else {
+                while (resultset.next()) {
                     String findreg = resultset.getString("registration");
 
-                    if(findreg.equals(Registration)){
-                        userInsert = connection.prepareStatement("UPDATE users SET Sub1=?, Sub2 = ?, Sub3=?, Sub4 = ?, Sub5 = ? WHERE registration =?");
-                        for(int i=0; i<5; i++){
-                            userInsert.setString(i+1, subject[i]);
+                    if (findreg.equals(Registration)) {
+                        userInsert = connection.prepareStatement(
+                                "UPDATE users SET Sub1=?, Sub2 = ?, Sub3=?, Sub4 = ?, Sub5 = ? WHERE registration =?");
+                        for (int i = 0; i < 5; i++) {
+                            userInsert.setString(i + 1, subject[i]);
                         }
                         userInsert.setString(6, Registration);
                         userInsert.executeUpdate();
@@ -538,11 +537,9 @@ public class EDUSPHEREUtils {
                     }
                 }
             }
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             if (resultset != null) {
                 try {
                     resultset.close();
@@ -557,26 +554,22 @@ public class EDUSPHEREUtils {
                     e.printStackTrace();
                 }
             }
-            if(finduser != null){
-                try{
+            if (finduser != null) {
+                try {
                     finduser.close();
-                } catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
-            if(connection != null){
-                try{
+            if (connection != null) {
+                try {
                     connection.close();
-                }
-                catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
         }
     }
-
-
-
 
     public static void FOT(ActionEvent event, String Time, String Time2, String Registration) {
         Connection connection = null;
@@ -584,25 +577,25 @@ public class EDUSPHEREUtils {
         PreparedStatement finduser = null;
         ResultSet resultset = null;
 
-        try{
-            connection = DriverManager.getConnection(url, userName, SQLPASS);
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", dbuser, dbpassword);
             finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             finduser.setString(1, Registration);
 
             resultset = finduser.executeQuery();
 
-            if(!resultset.isBeforeFirst()){
+            if (!resultset.isBeforeFirst()) {
                 System.out.println("Invalid Registration");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Invalid Registration");
                 alert.show();
-            }
-            else{
-                while(resultset.next()){
+            } else {
+                while (resultset.next()) {
                     String findreg = resultset.getString("registration");
 
-                    if(findreg.equals(Registration)){
-                        userInsert = connection.prepareStatement("UPDATE users SET time=?, time2=? WHERE registration = ?");
+                    if (findreg.equals(Registration)) {
+                        userInsert = connection
+                                .prepareStatement("UPDATE users SET time=?, time2=? WHERE registration = ?");
                         userInsert.setString(1, Time);
                         userInsert.setString(2, Time2);
                         userInsert.setString(3, Registration);
@@ -616,11 +609,9 @@ public class EDUSPHEREUtils {
                     }
                 }
             }
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             if (resultset != null) {
                 try {
                     resultset.close();
@@ -635,59 +626,55 @@ public class EDUSPHEREUtils {
                     e.printStackTrace();
                 }
             }
-            if(finduser != null){
-                try{
+            if (finduser != null) {
+                try {
                     finduser.close();
-                } catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
-            if(connection != null){
-                try{
+            if (connection != null) {
+                try {
                     connection.close();
-                }
-                catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
         }
     }
 
-
-
-
-    public static void Attendance(ActionEvent event, String[] classTaken, String[] classAttended, String Registration){
+    public static void Attendance(ActionEvent event, String[] classTaken, String[] classAttended, String Registration) {
         Connection connection = null;
         PreparedStatement userInsert = null;
         PreparedStatement finduser = null;
         ResultSet resultset = null;
 
-        try{
-            connection = DriverManager.getConnection(url, userName, SQLPASS);
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", dbuser, dbpassword);
             finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             finduser.setString(1, Registration);
 
             resultset = finduser.executeQuery();
 
-            if(!resultset.isBeforeFirst()){
+            if (!resultset.isBeforeFirst()) {
                 System.out.println("Invalid Registration");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Invalid Registration");
                 alert.show();
-            }
-            else {
+            } else {
                 while (resultset.next()) {
                     String findreg = resultset.getString("registration");
 
                     if (findreg.equals(Registration)) {
-                        userInsert = connection.prepareStatement("UPDATE users SET sub1Class=?, sub2Class=?, sub3Class=?, sub4Class=?, sub5Class=?, sub1At=?, sub2At=?, sub3At=?, sub4At=?, sub5At=? WHERE registration=?");
-                        for(int i=0; i<5; i++){
+                        userInsert = connection.prepareStatement(
+                                "UPDATE users SET sub1Class=?, sub2Class=?, sub3Class=?, sub4Class=?, sub5Class=?, sub1At=?, sub2At=?, sub3At=?, sub4At=?, sub5At=? WHERE registration=?");
+                        for (int i = 0; i < 5; i++) {
                             String temp = classTaken[i];
-                            userInsert.setString(i+1,temp);
+                            userInsert.setString(i + 1, temp);
                         }
-                        for(int i=5; i<10; i++){
-                            String temp1 = classAttended[i-5];
-                            userInsert.setString(i+1, temp1);
+                        for (int i = 5; i < 10; i++) {
+                            String temp1 = classAttended[i - 5];
+                            userInsert.setString(i + 1, temp1);
                         }
                         userInsert.setString(11, Registration);
 
@@ -701,11 +688,9 @@ public class EDUSPHEREUtils {
                     }
                 }
             }
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             if (resultset != null) {
                 try {
                     resultset.close();
@@ -720,18 +705,17 @@ public class EDUSPHEREUtils {
                     e.printStackTrace();
                 }
             }
-            if(finduser != null){
-                try{
+            if (finduser != null) {
+                try {
                     finduser.close();
-                } catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
-            if(connection != null){
-                try{
+            if (connection != null) {
+                try {
                     connection.close();
-                }
-                catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
@@ -739,34 +723,34 @@ public class EDUSPHEREUtils {
 
     }
 
-    public static void BOOK(ActionEvent event, String[] paths, String Registration){
+    public static void BOOK(ActionEvent event, String[] paths, String Registration) {
         Connection connection = null;
         PreparedStatement userInsert = null;
         PreparedStatement finduser = null;
         ResultSet resultset = null;
 
-        try{
-            connection = DriverManager.getConnection(url, userName, SQLPASS);
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/edusphere", dbuser, dbpassword);
             finduser = connection.prepareStatement("SELECT * FROM users WHERE registration = ?");
             finduser.setString(1, Registration);
 
             resultset = finduser.executeQuery();
 
-            if(!resultset.isBeforeFirst()){
+            if (!resultset.isBeforeFirst()) {
                 System.out.println("Invalid Registration");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Invalid Registration");
                 alert.show();
-            }
-            else{
-                while(resultset.next()){
+            } else {
+                while (resultset.next()) {
                     String findreg = resultset.getString("registration");
 
-                    if(findreg.equals(Registration)){
-                        userInsert = connection.prepareStatement("UPDATE users SET pdf1=?, pdf2=?, pdf3=?, pdf4=?, pdf5=? WHERE registration=?");
+                    if (findreg.equals(Registration)) {
+                        userInsert = connection.prepareStatement(
+                                "UPDATE users SET pdf1=?, pdf2=?, pdf3=?, pdf4=?, pdf5=? WHERE registration=?");
 
-                        for(int i=0; i<5; i++){
-                            userInsert.setString(i+1, paths[i]);
+                        for (int i = 0; i < 5; i++) {
+                            userInsert.setString(i + 1, paths[i]);
                         }
 
                         userInsert.setString(6, Registration);
@@ -777,11 +761,9 @@ public class EDUSPHEREUtils {
                     }
                 }
             }
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             if (resultset != null) {
                 try {
                     resultset.close();
@@ -796,18 +778,17 @@ public class EDUSPHEREUtils {
                     e.printStackTrace();
                 }
             }
-            if(finduser != null){
-                try{
+            if (finduser != null) {
+                try {
                     finduser.close();
-                } catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
-            if(connection != null){
-                try{
+            if (connection != null) {
+                try {
                     connection.close();
-                }
-                catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
